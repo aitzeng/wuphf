@@ -18,7 +18,16 @@
   "homepage": "https://github.com/aitzeng/rfp2303-mvp-wuphf#readme",
   "dependencies": {
     "axios": "^1.4.0",
+    "dotenv": "^16.1.4",
     "express": "^4.18.2",
-    "react": "^18.2.0"
+    "mongoose": "^7.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "nodemon": "^2.0.22",
+    "webpack": "^5.85.1",
+    "webpack-cli": "^5.1.3"
   }
 }

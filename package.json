@@ -1,0 +1,24 @@
+{
+  "name": "rfp2303-mvp-wuphf",
+  "version": "1.0.0",
+  "description": "Bark at your friends! ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aitzeng/rfp2303-mvp-wuphf.git"
+  },
+  "author": "Anthony Tzeng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aitzeng/rfp2303-mvp-wuphf/issues"
+  },
+  "homepage": "https://github.com/aitzeng/rfp2303-mvp-wuphf#readme",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "express": "^4.18.2",
+    "react": "^18.2.0"
+  }
+}

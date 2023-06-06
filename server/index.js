@@ -7,6 +7,8 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.use(express.json());
 
-app.listen(process.env.PORT, () => {
-  console.log('Listening at port 3000')
+let port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`)
 })

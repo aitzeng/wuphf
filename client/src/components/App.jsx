@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       {page === 0 ? <CreateForm setBarkInfo={setBarkInfo} setPage={setPage} /> : null}
-      {page === 1 ? <Confirmation barkInfo={barkInfo} /> : null}
+      {page === 1 ? <Confirmation barkInfo={barkInfo} setPage={setPage} /> : null}
     </div>
   );
 }

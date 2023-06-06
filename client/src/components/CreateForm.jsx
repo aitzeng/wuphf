@@ -36,11 +36,16 @@ function CreateForm({ setBarkInfo, setPage }) {
     <div className="FormPage">
       Receiver Information
       <form onSubmit={barkPackage.handleSubmit}>
-        <input type="text" id="message" placeholder="Message to send..." value={barkPackage.values.message} onChange={barkPackage.handleChange} />
-        <input type="text" id="firstName" placeholder="First Name of Receiver" value={barkPackage.values.firstName} onChange={barkPackage.handleChange} />
-        <input type="text" id="lastName" placeholder="Last Name of Receiver" value={barkPackage.values.lastName} onChange={barkPackage.handleChange} />
-        <input type="text" id="phoneNumber" placeholder="Phone Number" value={barkPackage.values.phoneNumber} onChange={barkPackage.handleChange} />
-        <input type="text" id="twitterHandle" placeholder="Twitter Handle" value={barkPackage.values.twitterHandle} onChange={barkPackage.handleChange} />
+        <div>Message to Send</div>
+        <input type="text" id="message" placeholder="Message..." value={barkPackage.values.message} onChange={barkPackage.handleChange} />
+        <div>First Name</div>
+        <input type="text" id="firstName" placeholder="Bob" value={barkPackage.values.firstName} onChange={barkPackage.handleChange} />
+        <div>Last Name</div>
+        <input type="text" id="lastName" placeholder="Loblaw" value={barkPackage.values.lastName} onChange={barkPackage.handleChange} />
+        <div>Phone Number</div>
+        <input type="text" id="phoneNumber" placeholder="9495551234" value={barkPackage.values.phoneNumber} onChange={barkPackage.handleChange} />
+        <div>Twitter Handle</div>
+        <input type="text" id="twitterHandle" placeholder="@WUPHF" value={barkPackage.values.twitterHandle} onChange={barkPackage.handleChange} />
         <button type="submit">Submit</button>
       </form>
       {barkPackage.errors.firstName && <div>{barkPackage.errors.firstName}</div>}

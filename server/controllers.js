@@ -1,11 +1,14 @@
+const twilio = require('../helpers/twilio.js');
+
 module.exports = {
-  send: (req, res) => {
-    postPhone(req)
+  post: (req, res) => {
+    twilio.postPhone(req.body)
       .then((message) => {
-        res.send(message);
+        res.status(200).send(message);
       })
       .catch((err) => {
         console.log(err);
+        res.status(500);
       });
   },
 };

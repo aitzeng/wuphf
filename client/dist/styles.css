@@ -1,0 +1,29 @@
+.FormPage {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+}
+
+.form-container {
+  margin-right: 10%;
+}
+
+.checkboxes-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  margin-top: 30px;
+}
+
+.checkbox {
+  margin-bottom: 15px;
+}
+
+/* #form-next {
+  float: inline-start;
+} */
+
+/* .input-form {
+  display: flex;
+  flex-direction: column;
+} */

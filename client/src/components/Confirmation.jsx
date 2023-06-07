@@ -2,16 +2,49 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function Confirmation({ barkInfo, setPage }) {
-  const clickHandler = (e) => {
+  const postBark = async (info) => {
+    const requests = [];
+    if (barkInfo.twitterHandle) {
+      requests.push(
+        axios.post('/wuphf/bark/twitter', info)
+          .then((response) => {
+            console.log(response);
+          })
+          .catch((err) => {
+            console.log('Twitter', err);
+          }),
+      );
+    }
+    if (barkInfo.email) {
+      requests.push(
+        axios.post('/wuphf/bark/gmail', info)
+          .then((response) => {
+            console.log(response);
+          })
+          .catch((err) => {
+            console.log('Twitter', err);
+          }),
+      );
+    }
+    if (barkInfo.phoneNumber) {
+      requests.push(
+        axios.post('/wuphf/bark/twilio', info)
+          .then((response) => {
+            console.log(response);
+            setPage(0);
+          })
+          .catch((err) => {
+            console.log(err);
+          }),
+      );
+    }
+    await Promise.all(requests);
+  };
+
+  const clickHandler = async (e) => {
     e.preventDefault();
-    axios.post('/wuphf/bark', barkInfo)
-      .then((response) => {
-        console.log(response);
-        setPage(0);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    await postBark(barkInfo);
+    setPage(0);
   };
   return (
     <div className="confirmation-page">

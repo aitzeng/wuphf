@@ -29,7 +29,9 @@
     "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "twilio": "^4.11.2"
+    "twilio": "^4.11.2",
+    "twitter": "^1.7.1",
+    "twitter-api-v2": "^1.15.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.5",

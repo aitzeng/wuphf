@@ -4,20 +4,19 @@ const twitter = require('../helpers/twitter.js');
 module.exports = {
   post: (req, res) => {
     twitter.tweet(req.body)
-      .then((message) => {
-        res.status(200).send(message);
+      .then(() => {
+        twilio.postPhone(req.body)
+          .then(() => {
+            res.send('Posted on Twitter and phone');
+          })
+          .catch((err) => {
+            console.log(err);
+            res.sendStatus(500);
+          });
       })
       .catch((err) => {
         console.log(err);
-        res.status(500);
+        res.sendStatus(500);
       });
-    // twilio.postPhone(req.body)
-    //   .then((message) => {
-    //     res.status(200).send(message);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //     res.status(500);
-    //   });
   },
 };

@@ -11,5 +11,5 @@ const client = new TwitterApi({
 const v2Client = client.v2;
 
 module.exports = {
-  tweet: (request) => v2Client.tweet(`${request.message}`),
+  tweet: (request) => v2Client.tweet(`${request.twitterHandle} ${request.message}`),
 };

@@ -21,6 +21,7 @@ function Confirmation({ barkInfo, setPage }) {
       <div>{barkInfo.message}</div>
       <div>{barkInfo.phoneNumber}</div>
       <div>{barkInfo.twitterHandle}</div>
+      <div>{barkInfo.email}</div>
       <button type="button" onClick={clickHandler}>Bark!</button>
     </div>
   );

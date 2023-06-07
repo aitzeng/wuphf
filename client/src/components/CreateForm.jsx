@@ -9,6 +9,7 @@ function CreateForm({ setBarkInfo, setPage }) {
       lastName: '',
       phoneNumber: '',
       twitterHandle: '',
+      email: '',
     },
     onSubmit: (values) => {
       console.log(values);
@@ -46,6 +47,8 @@ function CreateForm({ setBarkInfo, setPage }) {
         <input type="text" id="phoneNumber" placeholder="9495551234" value={barkPackage.values.phoneNumber} onChange={barkPackage.handleChange} />
         <div>Twitter Handle</div>
         <input type="text" id="twitterHandle" placeholder="@WUPHF" value={barkPackage.values.twitterHandle} onChange={barkPackage.handleChange} />
+        <div>Email</div>
+        <input type="text" id="email" placeholder="bobloblaw@gmail.com" value={barkPackage.values.twitterHandle} onChange={barkPackage.handleChange} />
         <button type="submit">Submit</button>
       </form>
       {barkPackage.errors.firstName && <div>{barkPackage.errors.firstName}</div>}

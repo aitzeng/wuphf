@@ -20,11 +20,13 @@
   },
   "homepage": "https://github.com/aitzeng/rfp2303-mvp-wuphf#readme",
   "dependencies": {
+    "@googleapis/gmail": "^2.0.1",
     "axios": "^1.4.0",
     "dev-server": "^0.2.0",
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
     "formik": "^2.4.1",
+    "googleapis-common": "^6.0.4",
     "mongoose": "^7.2.2",
     "path": "^0.12.7",
     "react": "^18.2.0",

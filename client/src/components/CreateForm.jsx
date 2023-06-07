@@ -1,59 +1,38 @@
 import React, { useState, useEffect } from 'react';
-import { useFormik } from 'formik';
+import SelectBox from './SelectBox.jsx';
+import InformationEntry from './InformationEntry.jsx';
 
 function CreateForm({ setBarkInfo, setPage }) {
-  const barkPackage = useFormik({
-    initialValues: {
-      message: '',
-      firstName: '',
-      lastName: '',
-      phoneNumber: '',
-      twitterHandle: '',
-      email: '',
-    },
-    onSubmit: (values) => {
-      console.log(values);
-      setBarkInfo(values);
-      setPage(1);
-    },
-    validate: (values) => {
-      const errors = {};
-      if (!values.firstName) {
-        errors.firstName = 'First Name Required!';
-      }
-      if (!values.lastName) {
-        errors.lastName = 'Last Name Required!';
-      }
-      if (!values.phoneNumber) {
-        errors.phoneNumber = 'Phone Number Required!';
-      } else if (!/^\d+$/.test(values.phoneNumber) || values.phoneNumber.length !== 10) {
-        errors.phoneNumber = 'Phone Number must have length of 10 and may not have any symbols/letters !';
-      }
-      return errors;
-    },
-  });
+  const [optionSMS, setOptionSMS] = useState(false);
+  const [optionTwitter, setOptionTwitter] = useState(false);
+  const [optionEmail, setOptionEmail] = useState(false);
+
+  const clickerSMS = () => {
+    setOptionSMS(!optionSMS);
+  };
+
+  const clickerTwitter = () => {
+    setOptionTwitter(!optionTwitter);
+  };
+
+  const clickerEmail = () => {
+    setOptionEmail(!optionEmail);
+  };
 
   return (
     <div className="FormPage">
-      Receiver Information
-      <form onSubmit={barkPackage.handleSubmit}>
-        <div>Message to Send</div>
-        <input type="text" id="message" placeholder="Message..." value={barkPackage.values.message} onChange={barkPackage.handleChange} />
-        <div>First Name</div>
-        <input type="text" id="firstName" placeholder="Bob" value={barkPackage.values.firstName} onChange={barkPackage.handleChange} />
-        <div>Last Name</div>
-        <input type="text" id="lastName" placeholder="Loblaw" value={barkPackage.values.lastName} onChange={barkPackage.handleChange} />
-        <div>Phone Number</div>
-        <input type="text" id="phoneNumber" placeholder="9495551234" value={barkPackage.values.phoneNumber} onChange={barkPackage.handleChange} />
-        <div>Twitter Handle</div>
-        <input type="text" id="twitterHandle" placeholder="@WUPHF" value={barkPackage.values.twitterHandle} onChange={barkPackage.handleChange} />
-        <div>Email</div>
-        <input type="text" id="email" placeholder="bobloblaw@gmail.com" value={barkPackage.values.email} onChange={barkPackage.handleChange} />
-        <button type="submit">Submit</button>
-      </form>
-      {barkPackage.errors.firstName && <div>{barkPackage.errors.firstName}</div>}
-      {barkPackage.errors.lastName && <div>{barkPackage.errors.lastName}</div>}
-      {barkPackage.errors.phoneNumber && <div>{barkPackage.errors.phoneNumber}</div>}
+      <InformationEntry
+        setBarkInfo={setBarkInfo}
+        setPage={setPage}
+        optionSMS={optionSMS}
+        optionEmail={optionEmail}
+        optionTwitter={optionTwitter}
+      />
+      <SelectBox
+        clickerSMS={clickerSMS}
+        clickerTwitter={clickerTwitter}
+        clickerEmail={clickerEmail}
+      />
     </div>
   );
 }

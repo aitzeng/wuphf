@@ -4,6 +4,17 @@ import axios from 'axios';
 function Confirmation({ barkInfo, setPage }) {
   const postBark = async (info) => {
     const requests = [];
+    if (barkInfo) {
+      requests.push(
+        axios.post('/wuphf/bark', info)
+          .then((response) => {
+            console.log(response);
+          })
+          .catch((err) => {
+            console.log('MongoDB', err);
+          }),
+      );
+    }
     if (barkInfo.twitterHandle) {
       requests.push(
         axios.post('/wuphf/bark/twitter', info)
@@ -31,7 +42,6 @@ function Confirmation({ barkInfo, setPage }) {
         axios.post('/wuphf/bark/twilio', info)
           .then((response) => {
             console.log(response);
-            setPage(0);
           })
           .catch((err) => {
             console.log(err);

@@ -16,7 +16,7 @@ function InformationEntry({
     onSubmit: (values) => {
       console.log(values);
       setBarkInfo(values);
-      setPage(1);
+      setPage(2);
     },
     validate: (values) => {
       const errors = {};

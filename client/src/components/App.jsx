@@ -24,7 +24,6 @@ function App() {
 
   return (
     <div id="application">
-      {/* <img src={logo} alt="logo" /> */}
       {page === 0 ? <WelcomePage setPage={setPage} /> : null}
       {page === 1 ? (
         <CreateForm

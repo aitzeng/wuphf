@@ -11,12 +11,7 @@ html * {
   flex-direction: row;
   height: 100%;
   width: 100%;
-}
-
-img {
-  border-radius: 25px;
-  position: absolute;
-  right: 50%;
+  overflow-y: auto;
 }
 
 .left-tab {
@@ -24,12 +19,16 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 55%;
+  height: 75%;
   width: 45%;
   border-radius: 25px;
   box-shadow: 15px 15px #0a3e55;
-  padding: 5%;
+  padding-top: 0rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-bottom: 10rem;
   background-color: #fbfbff;
+  overflow-y: auto;
 }
 
 .right-tab {
@@ -39,11 +38,22 @@ img {
   transform: translate(-50%, -50%);
   border-radius: 25px;
   background-color: #fbfbff;
-  padding: 1%;
+  padding: 1rem;
   box-shadow: 15px 15px #0a3e55;
 }
 
 /* INFORMATIONENTRY PAGE */
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  border-radius: 25px;
+  height: 300px;
+  width: auto;
+}
 
 .receiver-name-container {
   display: flex;

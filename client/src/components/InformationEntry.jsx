@@ -16,6 +16,7 @@ function InformationEntry({
   };
   return (
     <div className="form-container">
+      <img src="https://i5.walmartimages.com/asr/4a4638f6-60b5-4d23-a461-1013faee4d83.f410b856a3e39c7b4513c802c3dd175e.jpeg" alt="logo" />
       <form className="input-form">
         <div className="receiver-name-container">
           <div className="first-name-container">

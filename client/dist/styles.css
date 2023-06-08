@@ -15,14 +15,14 @@ html,body, #root {
 }
 
 .form-container {
-  margin-right: 15%;
+  padding-right: 15%;
+  float: inline-end;
 }
 
 .checkboxes-container {
   display: flex;
   flex-direction: column;
   margin-right: 15%;
-  margin-top: 30px;
 }
 
 .history-container {
@@ -51,7 +51,13 @@ html,body, #root {
 .individual-history-button:hover {
   background-color: #555;
   color: white;
+  cursor: pointer;
 }
+
+.error {
+  color: red;
+}
+
 /*
 .individual-history-button:active {
   background-color: #04AA6D;

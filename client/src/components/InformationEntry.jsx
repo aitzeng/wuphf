@@ -2,8 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { useFormik } from 'formik';
 
 function InformationEntry({
-  optionSMS, optionTwitter, optionEmail, barkPackage, optionCall
+  optionSMS, optionTwitter, optionEmail, barkPackage, optionCall,
 }) {
+  const clearClicker = () => {
+    barkPackage.setValues({
+      message: '',
+      firstName: '',
+      lastName: '',
+      phoneNumber: '',
+      twitterHandle: '',
+      email: '',
+    });
+  };
   return (
     <div className="form-container">
       <form className="input-form">
@@ -33,10 +43,11 @@ function InformationEntry({
         ) : null}
       </form>
       <button id="form-next" className="button" type="submit" onClick={barkPackage.handleSubmit}>Next Page</button>
-      {barkPackage.errors.firstName && <div>{barkPackage.errors.firstName}</div>}
-      {barkPackage.errors.lastName && <div>{barkPackage.errors.lastName}</div>}
-      {barkPackage.errors.communication && <div>{barkPackage.errors.communication}</div>}
-      {barkPackage.errors.phoneNumber && <div>{barkPackage.errors.phoneNumber}</div>}
+      <button id="clear-inputs" className="button" type="button" onClick={clearClicker}>Clear</button>
+      {barkPackage.errors.firstName && <div className="error">{barkPackage.errors.firstName}</div>}
+      {barkPackage.errors.lastName && <div className="error">{barkPackage.errors.lastName}</div>}
+      {barkPackage.errors.communication && <div className="error">{barkPackage.errors.communication}</div>}
+      {barkPackage.errors.phoneNumber && <div className="error">{barkPackage.errors.phoneNumber}</div>}
     </div>
   );
 }

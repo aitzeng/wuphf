@@ -33,11 +33,11 @@ function CreateForm({
         errors.lastName = 'Last Name Required!';
       }
       if (!optionSMS && !optionTwitter && !optionEmail && !optionCall) {
-        errors.communication = 'Select One Communication Method!';
+        errors.communication = 'Communication Method Required!';
       }
       if (optionSMS || optionCall) {
         if (!/^\d+$/.test(values.phoneNumber) || values.phoneNumber.length !== 10) {
-          errors.phoneNumber = 'Phone Number must have length of 10 and may not have any symbols/letters !';
+          errors.phoneNumber = 'Invalid Phone Number';
         }
       }
       return errors;

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 function SelectBox({ clickerSMS, clickerTwitter, clickerEmail, clickerCall }) {
   return (
     <div className="checkboxes-container">
+      <div className="checkbox-title">Communication Method</div>
       <label htmlFor="SMS-Check">
         <input type="checkbox" id="SMS-Check" className="checkbox" onClick={clickerSMS} />
         SMS

@@ -50,6 +50,7 @@ html * {
 }
 
 img {
+  align-items: center;
   border-radius: 25px;
   height: 300px;
   width: auto;

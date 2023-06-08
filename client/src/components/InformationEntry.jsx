@@ -2,39 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useFormik } from 'formik';
 
 function InformationEntry({
-  setBarkInfo, setPage, optionSMS, optionTwitter, optionEmail,
+  optionSMS, optionTwitter, optionEmail, barkPackage,
 }) {
-  const barkPackage = useFormik({
-    initialValues: {
-      message: '',
-      firstName: '',
-      lastName: '',
-      phoneNumber: '',
-      twitterHandle: '',
-      email: '',
-    },
-    onSubmit: (values) => {
-      console.log(values);
-      setBarkInfo(values);
-      setPage(2);
-    },
-    validate: (values) => {
-      const errors = {};
-      if (!values.firstName) {
-        errors.firstName = 'First Name Required!';
-      }
-      if (!values.lastName) {
-        errors.lastName = 'Last Name Required!';
-      }
-      if (!optionSMS && !optionTwitter && !optionEmail) {
-        errors.communication = 'Select One Communication Method!';
-      }
-      // if (!/^\d+$/.test(values.phoneNumber) || values.phoneNumber.length !== 10) {
-      //   errors.phoneNumber = 'Phone Number must have length of 10 and may not have any symbols/letters !';
-      // }
-      return errors;
-    },
-  });
   return (
     <div className="form-container">
       <form className="input-form">
@@ -67,6 +36,7 @@ function InformationEntry({
       {barkPackage.errors.firstName && <div>{barkPackage.errors.firstName}</div>}
       {barkPackage.errors.lastName && <div>{barkPackage.errors.lastName}</div>}
       {barkPackage.errors.communication && <div>{barkPackage.errors.communication}</div>}
+      {barkPackage.errors.phoneNumber && <div>{barkPackage.errors.phoneNumber}</div>}
     </div>
   );
 }

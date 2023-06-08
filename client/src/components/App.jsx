@@ -5,7 +5,7 @@ import Confirmation from './Confirmation.jsx';
 import WelcomePage from './WelcomePage.jsx';
 
 function App() {
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
   const [barkInfo, setBarkInfo] = useState({});
   const [pack, setPack] = useState([]);
   const [optionSMS, setOptionSMS] = useState(false);

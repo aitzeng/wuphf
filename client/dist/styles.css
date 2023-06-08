@@ -1,13 +1,107 @@
-html,body, #root {
+.FormPage {
+  display: flex;
+  flex-direction: row;
   height: 100%;
+  width: 100%;
 }
+
+.left-tab {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50%;
+  width: 50%;
+  /* padding: 15%; */
+}
+
+.right-tab {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+}
+
+/* INFORMATIONENTRY PAGE */
+
+.receiver-name-container {
+  display: flex;
+  margin-bottom: 4%;
+  height: 100%;
+  width: 100%;
+}
+
+.input-container {
+  margin-bottom: 4%;
+  height: 100%;
+  width: 100%;
+}
+
+.input-name {
+  margin-bottom: 2%;
+}
+
+.name {
+  margin-bottom: 4%;
+}
+
+.first-name-container, .last-name-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.first-name-container {
+  margin-right: 10%;
+}
+
+#message, #phoneNumber, #twitterHandle, #email {
+  width: 100%;
+}
+
+
+/* RIGHT TAB */
+.vertical-menu {
+  margin: 0;
+  padding: 0;
+  width: 60px;
+}
+
+.checkboxes-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.individual-history-button {
+  display: block;
+  width: 150px;
+  display: block;
+  background-color: #f1f1f1;
+  border: solid 1px black;
+}
+
+.individual-history-button:hover {
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+}
+
+
+/* html,body, #root {
+  height: 100%;
+} */
 
 /* #application, .welcome-page {
   justify-content: center;
   align-items: center;
 } */
 
-.FormPage {
+/* .FormPage {
   display: flex;
   padding: 10px;
   margin-top: 20%;
@@ -32,31 +126,7 @@ html,body, #root {
 
 .checkbox {
   margin-bottom: 15px;
-}
-
-.vertical-menu {
-  margin: 0;
-  padding: 0;
-  width: 60px;
-}
-
-.individual-history-button {
-  display: block;
-  width: 150px;
-  display: block;
-  background-color: #f1f1f1;
-  border: solid 1px black;
-}
-
-.individual-history-button:hover {
-  background-color: #555;
-  color: white;
-  cursor: pointer;
-}
-
-.error {
-  color: red;
-}
+} */
 
 /*
 .individual-history-button:active {

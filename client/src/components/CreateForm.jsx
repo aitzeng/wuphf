@@ -62,22 +62,26 @@ function CreateForm({
 
   return (
     <div className="FormPage">
-      <InformationEntry
-        barkPackage={barkPackage}
-        setBarkInfo={setBarkInfo}
-        setPage={setPage}
-        optionSMS={optionSMS}
-        optionEmail={optionEmail}
-        optionTwitter={optionTwitter}
-        optionCall={optionCall}
-      />
-      <SelectBox
-        clickerSMS={clickerSMS}
-        clickerTwitter={clickerTwitter}
-        clickerEmail={clickerEmail}
-        clickerCall={clickerCall}
-      />
-      <History pack={pack} barkPackage={barkPackage} />
+      <div className="left-tab">
+        <InformationEntry
+          barkPackage={barkPackage}
+          setBarkInfo={setBarkInfo}
+          setPage={setPage}
+          optionSMS={optionSMS}
+          optionEmail={optionEmail}
+          optionTwitter={optionTwitter}
+          optionCall={optionCall}
+        />
+      </div>
+      <div className="right-tab">
+        <SelectBox
+          clickerSMS={clickerSMS}
+          clickerTwitter={clickerTwitter}
+          clickerEmail={clickerEmail}
+          clickerCall={clickerCall}
+        />
+        <History pack={pack} barkPackage={barkPackage} />
+      </div>
     </div>
   );
 }

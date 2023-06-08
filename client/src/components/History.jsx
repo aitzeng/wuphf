@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import IndividualHistory from './IndividualHistory.jsx';
 
-function History() {
+function History({pack}) {
   return (
-    <div className="history-page">
-      <div className="title">Familiar Smells</div>
+    <div className="history-container">
+      <div className="title">History</div>
+      <ul className="vertical-menu">
+        {pack.slice(0, 5).map((bark) => <IndividualHistory bark={bark} key={bark._id} />)}
+      </ul>
     </div>
   );
 }

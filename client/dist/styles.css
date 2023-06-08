@@ -15,27 +15,48 @@ html,body, #root {
 }
 
 .form-container {
-  margin-right: 10%;
+  margin-right: 15%;
 }
 
 .checkboxes-container {
   display: flex;
   flex-direction: column;
-  margin-right: 20%;
+  margin-right: 15%;
   margin-top: 30px;
 }
 
 .history-container {
   display: flex;
   flex-direction: column;
-  margin-left: 10%;
-  margin-top: 350px;
 }
 
 .checkbox {
   margin-bottom: 15px;
 }
 
+.vertical-menu {
+  margin: 0;
+  padding: 0;
+  width: 60px;
+}
+
+.individual-history-button {
+  display: block;
+  width: 150px;
+  display: block;
+  background-color: #f1f1f1;
+  border: solid 1px black;
+}
+
+.individual-history-button:hover {
+  background-color: #555;
+  color: white;
+}
+/*
+.individual-history-button:active {
+  background-color: #04AA6D;
+  color: white;
+} */
 /* #form-next {
   float: inline-start;
 } */

@@ -62,10 +62,15 @@ function Confirmation({ barkInfo, setPage, optionSMS, optionCall }) {
     await Promise.all(requests);
   };
 
-  const clickHandler = async (e) => {
+  const confirmHandler = async (e) => {
     e.preventDefault();
     await postBark(barkInfo);
-    setPage(0);
+    setPage(1);
+  };
+
+  const backHandler = (e) => {
+    e.preventDefault();
+    setPage(1);
   };
   return (
     <div className="confirmation-page">
@@ -76,7 +81,8 @@ function Confirmation({ barkInfo, setPage, optionSMS, optionCall }) {
       <div>{barkInfo.phoneNumber}</div>
       <div>{barkInfo.twitterHandle}</div>
       <div>{barkInfo.email}</div>
-      <button type="button" onClick={clickHandler}>Bark!</button>
+      <button type="button" onClick={backHandler}>Back</button>
+      <button type="button" onClick={confirmHandler}>Bark!</button>
     </div>
   );
 }

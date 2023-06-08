@@ -3,6 +3,7 @@ import axios from 'axios';
 import CreateForm from './CreateForm.jsx';
 import Confirmation from './Confirmation.jsx';
 import WelcomePage from './WelcomePage.jsx';
+// import logo from '../images/wuphf.jpg';
 
 function App() {
   const [page, setPage] = useState(1);
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <div id="application">
+      {/* <img src={logo} alt="logo" /> */}
       {page === 0 ? <WelcomePage setPage={setPage} /> : null}
       {page === 1 ? (
         <CreateForm

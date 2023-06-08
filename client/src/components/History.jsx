@@ -4,7 +4,7 @@ import IndividualHistory from './IndividualHistory.jsx';
 function History({ pack, barkPackage }) {
   return (
     <div className="history-container">
-      <div className="title">History</div>
+      <div className="history-title">History</div>
       <ul className="vertical-menu">
         {pack.slice(0, 5).map((bark) => (
           <IndividualHistory

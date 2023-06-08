@@ -4,8 +4,9 @@ import SelectBox from './SelectBox.jsx';
 import InformationEntry from './InformationEntry.jsx';
 import History from './History.jsx';
 
-function CreateForm({ setBarkInfo, setPage, pack }) {
-  const [optionSMS, setOptionSMS] = useState(false);
+function CreateForm({
+  setBarkInfo, setPage, pack, optionSMS, setOptionSMS, optionCall, setOptionCall,
+}) {
   const [optionTwitter, setOptionTwitter] = useState(false);
   const [optionEmail, setOptionEmail] = useState(false);
 
@@ -31,10 +32,10 @@ function CreateForm({ setBarkInfo, setPage, pack }) {
       if (!values.lastName) {
         errors.lastName = 'Last Name Required!';
       }
-      if (!optionSMS && !optionTwitter && !optionEmail) {
+      if (!optionSMS && !optionTwitter && !optionEmail && !optionCall) {
         errors.communication = 'Select One Communication Method!';
       }
-      if (optionSMS) {
+      if (optionSMS || optionCall) {
         if (!/^\d+$/.test(values.phoneNumber) || values.phoneNumber.length !== 10) {
           errors.phoneNumber = 'Phone Number must have length of 10 and may not have any symbols/letters !';
         }
@@ -55,6 +56,10 @@ function CreateForm({ setBarkInfo, setPage, pack }) {
     setOptionEmail(!optionEmail);
   };
 
+  const clickerCall = () => {
+    setOptionCall(!optionCall);
+  };
+
   return (
     <div className="FormPage">
       <InformationEntry
@@ -64,11 +69,13 @@ function CreateForm({ setBarkInfo, setPage, pack }) {
         optionSMS={optionSMS}
         optionEmail={optionEmail}
         optionTwitter={optionTwitter}
+        optionCall={optionCall}
       />
       <SelectBox
         clickerSMS={clickerSMS}
         clickerTwitter={clickerTwitter}
         clickerEmail={clickerEmail}
+        clickerCall={clickerCall}
       />
       <History pack={pack} barkPackage={barkPackage} />
     </div>

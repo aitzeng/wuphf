@@ -25,12 +25,22 @@ module.exports = {
       });
   },
   sms: (req, res) => {
-    twilio.postPhone(req.body)
+    twilio.textPhone(req.body)
       .then(() => {
         res.sendStatus(200);
       })
       .catch((err) => {
         console.log('Err sending text', err);
+        res.sendStatus(500);
+      });
+  },
+  call: (req, res) => {
+    twilio.callPhone(req.body)
+      .then(() => {
+        res.sendStatus(200);
+      })
+      .catch((err) => {
+        console.log('Err calling', err);
         res.sendStatus(500);
       });
   },

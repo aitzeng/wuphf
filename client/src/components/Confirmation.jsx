@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function Confirmation({ barkInfo, setPage }) {
+function Confirmation({ barkInfo, setPage, optionSMS, optionCall }) {
   const postBark = async (info) => {
     const requests = [];
     if (barkInfo) {
@@ -37,9 +37,20 @@ function Confirmation({ barkInfo, setPage }) {
           }),
       );
     }
-    if (barkInfo.phoneNumber) {
+    if (optionSMS && barkInfo.phoneNumber) {
       requests.push(
-        axios.post('/wuphf/bark/twilio', info)
+        axios.post('/wuphf/bark/twilio/text', info)
+          .then((response) => {
+            console.log(response);
+          })
+          .catch((err) => {
+            console.log(err);
+          }),
+      );
+    }
+    if (optionCall && barkInfo.phoneNumber) {
+      requests.push(
+        axios.post('/wuphf/bark/twilio/call', info)
           .then((response) => {
             console.log(response);
           })

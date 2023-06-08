@@ -8,6 +8,8 @@ function App() {
   const [page, setPage] = useState(0);
   const [barkInfo, setBarkInfo] = useState({});
   const [pack, setPack] = useState([]);
+  const [optionSMS, setOptionSMS] = useState(false);
+  const [optionCall, setOptionCall] = useState(false);
 
   useEffect(() => {
     axios.get('/wuphf/sniff')
@@ -22,8 +24,25 @@ function App() {
   return (
     <div id="application">
       {page === 0 ? <WelcomePage setPage={setPage} /> : null}
-      {page === 1 ? <CreateForm pack={pack} setBarkInfo={setBarkInfo} setPage={setPage} /> : null}
-      {page === 2 ? <Confirmation barkInfo={barkInfo} setPage={setPage} /> : null}
+      {page === 1 ? (
+        <CreateForm
+          pack={pack}
+          setBarkInfo={setBarkInfo}
+          setPage={setPage}
+          optionSMS={optionSMS}
+          setOptionSMS={setOptionSMS}
+          optionCall={optionCall}
+          setOptionCall={setOptionCall}
+        />
+      ) : null}
+      {page === 2 ? (
+        <Confirmation
+          barkInfo={barkInfo}
+          setPage={setPage}
+          optionCall={optionCall}
+          optionSMS={optionSMS}
+        />
+      ) : null}
     </div>
   );
 }

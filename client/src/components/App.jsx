@@ -6,7 +6,7 @@ import WelcomePage from './WelcomePage.jsx';
 // import logo from '../images/wuphf.jpg';
 
 function App() {
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
   const [barkInfo, setBarkInfo] = useState({});
   const [pack, setPack] = useState([]);
   const [optionSMS, setOptionSMS] = useState(false);

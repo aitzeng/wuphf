@@ -67,7 +67,7 @@ function Confirmation({ barkInfo, setPage, optionSMS, optionCall, optionTwitter,
   const confirmHandler = async () => {
     await postBark(barkInfo);
     getHistory();
-    setPage(0);
+    setPage(1);
   };
 
   const backHandler = () => {

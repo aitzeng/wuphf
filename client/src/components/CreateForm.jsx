@@ -5,11 +5,8 @@ import InformationEntry from './InformationEntry.jsx';
 import History from './History.jsx';
 
 function CreateForm({
-  setBarkInfo, setPage, pack, optionSMS, setOptionSMS, optionCall, setOptionCall,
+  setBarkInfo, setPage, pack, optionSMS, setOptionSMS, optionCall, setOptionCall, optionEmail, setOptionEmail, optionTwitter, setOptionTwitter,
 }) {
-  const [optionTwitter, setOptionTwitter] = useState(false);
-  const [optionEmail, setOptionEmail] = useState(false);
-
   const barkPackage = useFormik({
     initialValues: {
       message: '',

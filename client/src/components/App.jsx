@@ -6,13 +6,15 @@ import WelcomePage from './WelcomePage.jsx';
 // import logo from '../images/wuphf.jpg';
 
 function App() {
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const [barkInfo, setBarkInfo] = useState({});
   const [pack, setPack] = useState([]);
   const [optionSMS, setOptionSMS] = useState(false);
   const [optionCall, setOptionCall] = useState(false);
+  const [optionTwitter, setOptionTwitter] = useState(false);
+  const [optionEmail, setOptionEmail] = useState(false);
 
-  useEffect(() => {
+  const getHistory = () => {
     axios.get('/wuphf/sniff')
       .then((response) => {
         setPack(response.data);
@@ -20,6 +22,10 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
+  };
+
+  useEffect(() => {
+    getHistory();
   }, []);
 
   return (
@@ -30,6 +36,10 @@ function App() {
           pack={pack}
           setBarkInfo={setBarkInfo}
           setPage={setPage}
+          optionEmail={optionEmail}
+          setOptionEmail={setOptionEmail}
+          optionTwitter={optionTwitter}
+          setOptionTwitter={setOptionTwitter}
           optionSMS={optionSMS}
           setOptionSMS={setOptionSMS}
           optionCall={optionCall}
@@ -40,8 +50,11 @@ function App() {
         <Confirmation
           barkInfo={barkInfo}
           setPage={setPage}
+          optionTwitter={optionTwitter}
+          optionEmail={optionEmail}
           optionCall={optionCall}
           optionSMS={optionSMS}
+          getHistory={getHistory}
         />
       ) : null}
     </div>

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function Confirmation({ barkInfo, setPage, optionSMS, optionCall }) {
+function Confirmation({ barkInfo, setPage, optionSMS, optionCall, optionTwitter, optionEmail, getHistory }) {
   const postBark = async (info) => {
+    delete info._id;
+    console.log(info);
     const requests = [];
     if (barkInfo) {
       requests.push(
@@ -15,7 +17,7 @@ function Confirmation({ barkInfo, setPage, optionSMS, optionCall }) {
           }),
       );
     }
-    if (barkInfo.twitterHandle) {
+    if (optionTwitter) {
       requests.push(
         axios.post('/wuphf/bark/twitter', info)
           .then((response) => {
@@ -26,7 +28,7 @@ function Confirmation({ barkInfo, setPage, optionSMS, optionCall }) {
           }),
       );
     }
-    if (barkInfo.email) {
+    if (optionEmail) {
       requests.push(
         axios.post('/wuphf/bark/gmail', info)
           .then((response) => {
@@ -62,14 +64,13 @@ function Confirmation({ barkInfo, setPage, optionSMS, optionCall }) {
     await Promise.all(requests);
   };
 
-  const confirmHandler = async (e) => {
-    e.preventDefault();
+  const confirmHandler = async () => {
     await postBark(barkInfo);
-    setPage(1);
+    getHistory();
+    setPage(0);
   };
 
-  const backHandler = (e) => {
-    e.preventDefault();
+  const backHandler = () => {
     setPage(1);
   };
   return (

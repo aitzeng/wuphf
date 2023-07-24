@@ -5,3 +5,9 @@ WUPHF is a web application intended to allow users to communicate with an indivi
 
 ## Tech Stack
 Javascript, React, NodeJS, Express.js, PostgreSQL, Google API, Twilio API, Twitter API, Axios, Nodemailer
+
+## FUNCTIONALITY
+1. Select which method of communication you would like to reach out to
+2. Enter in the receiver's contact information
+3. Type the message you would like to choose
+4. Confirm the message and method of communication and send away!
